@@ -2,7 +2,7 @@
 *\file		 AudioEngine.cpp
 *\brief		 Contains definition for audio engine
 
-*\author(s)  Goh Wei Zhe	178 lines x 100% Code contribution
+*\author(s)  Goh Wei Zhe	153 lines x 100% Code contribution
 
 Copyright (C) 2020 DigiPen Institute of Technology.
 Reproduction or disclosure of this file or its contents without the
@@ -132,26 +132,6 @@ int AudioEngine::ErrorCheck(FMOD_RESULT result)
         return 1;
     }
     return 0;
-}
-
-void AudioEngine::CheckInput()
-{
-    Input& input = gFakeEngine->GetGameManager<Input>();
-
-    if (_gameStateCurrent == GS_STATES::GS_MAINMENU)
-    {
-        if (input.CheckPress(GLFW_KEY_DOWN) || input.CheckPress(GLFW_KEY_UP))
-            PlaySound("Audio/keySelect.wav", FMOD_LOOP_OFF);
-
-        if (input.CheckPress(GLFW_KEY_1))
-            MuteSound();
-    }
-
-    if (_gameStateCurrent == GS_STATES::GS_STAGE1)
-    {
-        if (input.CheckPress(GLFW_KEY_SPACE))
-            PlaySound("Audio/keySelect.wav", FMOD_LOOP_OFF);
-    }
 }
 
 void AudioEngine::Init()
