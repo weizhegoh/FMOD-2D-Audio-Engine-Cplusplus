@@ -165,11 +165,6 @@ void AudioEngine::Update()
     audio->Update();
 }
 
-void AudioEngine::MuteSound()
-{
-
-}
-
 void AudioEngine::Shutdown()
 {
     std::cout << "soundMap.size(): " << audio->soundMap.size() << std::endl;
